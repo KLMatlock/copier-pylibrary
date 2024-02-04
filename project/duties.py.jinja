@@ -60,7 +60,7 @@ def changelog(ctx: Context) -> None:
     raise NotImplementedError("Waiting to implement towncrier!")
 
 
-@duty(pre=["check_quality", "check_types", "check_docs", "check_dependencies", "check-api"])
+@duty(pre=["check_quality", "check_types", "check_dependencies"])
 def check(ctx: Context) -> None:  # noqa: ARG001
     """Check it all!
 

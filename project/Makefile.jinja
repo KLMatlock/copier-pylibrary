@@ -1,6 +1,7 @@
 .DEFAULT_GOAL := help
 SHELL := bash
 DUTY := $(if $(VIRTUAL_ENV),,pdm run) duty
+MULTIRUN_DUTY := $(if $(USE_MULTIRUN),pdm multirun,) duty
 ifeq ($(USE_MULTIRUN),)
 export PDM_MULTIRUN_VERSIONS := 
 else
@@ -29,6 +30,7 @@ BASIC_DUTIES = \
 	vscode
 
 QUALITY_DUTIES = \
+	check \
 	check-quality \
 	check-docs \
 	check-types \
@@ -46,15 +48,10 @@ lock:
 setup:
 	@bash scripts/setup.sh
 
-.PHONY: check
-check:
-	@pdm multirun duty check-quality check-types check-docs
-	@$(DUTY) check-dependencies check-api
-
 .PHONY: $(BASIC_DUTIES)
 $(BASIC_DUTIES):
 	@$(DUTY) $@ $(call args,$@)
 
 .PHONY: $(QUALITY_DUTIES)
 $(QUALITY_DUTIES):
-	@pdm multirun duty $@ $(call args,$@)
+	@$(MULTIRUN_DUTY) $@ $(call args,$@)
