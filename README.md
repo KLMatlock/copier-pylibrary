@@ -5,15 +5,10 @@
 [![gitter](https://badges.gitter.im/join%20chat.svg)](https://app.gitter.im/#/room/#copier-pdm/community:gitter.im)
 
 [Copier](https://github.com/copier-org/copier) template
-for Python projects managed by [PDM](https://github.com/pdm-project/pdm).
-
-This copier template is mainly for my own usage,
-but feel free to try it out, or fork it!
+for Python projects, forked from [PDM](https://github.com/pdm-project/pdm).
 
 ## Features
 
-- Support for Insiders versions of projects (e.g. see [@pawamoy's insiders](https://pawamoy.github.io/insiders/))
-- [PDM](https://github.com/pdm-project/pdm) setup, with pre-defined `pyproject.toml`
 - Documentation built with [MkDocs](https://github.com/mkdocs/mkdocs)
   ([Material theme](https://github.com/squidfunk/mkdocs-material)
   and "autodoc" [mkdocstrings plugin](https://github.com/mkdocstrings/mkdocstrings))
@@ -26,15 +21,14 @@ but feel free to try it out, or fork it!
 - Tests run with [pytest](https://github.com/pytest-dev/pytest) and plugins, with [coverage](https://github.com/nedbat/coveragepy) support
 - Cross-platform tasks with [duty](https://github.com/pawamoy/duty)
 - Support for GitHub workflows
-- Python 3.8 or above
-- Auto-generated `CHANGELOG.md` from git commits (using Angular message style)
+- Python 3.9 or above
 - All licenses from [choosealicense.com](https://choosealicense.com/appendix/)
 - Makefile for convenience
 
 ## Quick setup and usage
 
 Make sure all the
-[requirements](https://pawamoy.github.io/copier-pdm/requirements)
+[requirements](/docs/requirements.md)
 are met, then:
 
 ```bash

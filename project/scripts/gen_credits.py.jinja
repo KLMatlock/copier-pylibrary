@@ -1,15 +1,13 @@
 """Script to generate the project's credits."""
-
-from __future__ import annotations
-
 import os
 import re
 import sys
+from collections.abc import Mapping
 from importlib.metadata import PackageNotFoundError, metadata
 from itertools import chain
 from pathlib import Path
 from textwrap import dedent
-from typing import Mapping, cast
+from typing import cast
 
 from jinja2 import StrictUndefined
 from jinja2.sandbox import SandboxedEnvironment

@@ -4,7 +4,7 @@ from pathlib import Path
 
 import mkdocs_gen_files
 
-nav = mkdocs_gen_files.Nav()
+nav = mkdocs_gen_files.Nav() # pyright: ignore [reportPrivateImportUsage]
 mod_symbol = '<code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>'
 
 src = Path(__file__).parent.parent / "src"

@@ -16,7 +16,6 @@
             "module": "pytest",
             "justMyCode": false,
             "args": [
-                "-c=config/pytest.ini",
                 "-vvv",
                 "--no-cov",
                 "--dist=no",
