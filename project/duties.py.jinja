@@ -231,10 +231,10 @@ def format(ctx: Context) -> None:
         ctx: The context instance (passed automatically).
     """
     ctx.run(
-        ruff.check(*PY_SRC_LIST, config="config/ruff.toml", fix_only=True, exit_zero=True),
+        ruff.check(*PY_SRC_LIST, fix_only=True, exit_zero=True),
         title="Auto-fixing code",
     )
-    ctx.run(ruff.format(*PY_SRC_LIST, config="config/ruff.toml"), title="Formatting code")
+    ctx.run(ruff.format(*PY_SRC_LIST), title="Formatting code")
     {#- ctx.run(
         blacken_docs.run(*PY_SRC_LIST, "docs", exts=["py", "md"], line_length=120),
         title="Formatting docs",
@@ -277,8 +277,8 @@ def cov(ctx: Context) -> None:
         ctx: The context instance (passed automatically).
     """
     ctx.run(coverage.combine, nofail=True)
-    ctx.run(coverage.report(rcfile="config/coverage.ini"), capture=False)
-    ctx.run(coverage.html(rcfile="config/coverage.ini"))
+    ctx.run(coverage.report(), capture=False)
+    ctx.run(coverage.html())
 
 
 @duty

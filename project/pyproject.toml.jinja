@@ -238,6 +238,7 @@ ignore = [
     "T201",  # Print statement
 ]
 "tests/*.py" = [
+    "ANN201", # Missing return type annotation for public functions
     "ARG005",  # Unused lambda argument
     "FBT001",  # Boolean positional arg in function definition
     "PLR2004",  # Magic value used in comparison
@@ -268,14 +269,8 @@ norecursedirs = [
   "dist",
   "build",
 ]
-python_files = [
-  "test_*.py",
-  "*_test.py",
-  "tests.py",
-]
 addopts = [
-  "--cov",
-  "--cov-config config/coverage.ini"
+  "--cov"
 ]
 testpaths = [
     "tests",
